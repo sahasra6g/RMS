@@ -9,6 +9,8 @@ import restaurant.storage.MenuStorage;
 import restaurant.storage.OrderStorage;
 import restaurant.storage.CollectionMenuStorage;
 import restaurant.storage.CollectionOrderStorage;
+import restaurant.storage.JsonMenuStorage;
+import restaurant.storage.JsonOrderStorage;
 import restaurant.view.MainView;
 
 public class Main {
@@ -36,12 +38,9 @@ public class Main {
                 break;
 
             case 2:
-                System.out.println(
-                    "JSON storage is not implemented yet."
-                );
-                sc.close();
-                return;
-
+                menuStorage=new JsonMenuStorage();
+                orderStorage=new JsonOrderStorage();
+                break;
             case 3:
                 System.out.println(
                     "Database storage is not implemented yet."

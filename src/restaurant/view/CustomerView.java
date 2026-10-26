@@ -19,6 +19,7 @@ public class CustomerView {
         System.out.println("2. Place Order");
         System.out.println("3. View Order Summary");
         System.out.println("4. Make Payment");
+        System.out.println("5. View Previous Orders");
         System.out.println("0. Logout");
         return readInt("Enter your choice: ");
     }

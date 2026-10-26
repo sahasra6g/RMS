@@ -68,6 +68,7 @@ public class Customer {
             System.out.println("2. Place Order");
             System.out.println("3. View Order Summary");
             System.out.println("4. Make Payment");
+            System.out.println("5. View Previous Orders");
             System.out.println("0. Logout");
             System.out.print("Enter your choice: ");
 
@@ -89,6 +90,10 @@ public class Customer {
                 case 4:
                     makePayment(sc);
                     break;
+                    
+                case 5:
+                		viewPreviousOrders();
+                		break;
 
                 case 0:
                     System.out.println("Customer logged out.");
@@ -187,7 +192,23 @@ public class Customer {
             System.out.println("Payment Status: Pending");
         }
     }
+ // View previous orders placed by this customer
+    private void viewPreviousOrders() {
+        System.out.println("\n===== PREVIOUS ORDERS =====");
 
+        boolean found = false;
+
+        for (Order order : orderStorage.getAllOrders()) {
+            if (order.getCustomerId() == customerId) {
+                order.displayOrder();
+                found = true;
+            }
+        }
+
+        if (!found) {
+            System.out.println("No previous orders found.");
+        }
+    }
     // Make payment and save the order
     private void makePayment(Scanner sc) {
         if (orderedItems.isEmpty()) {

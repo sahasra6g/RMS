@@ -1,0 +1,21 @@
+[
+  {
+    "orderId": 1001,
+    "customerId": 93,
+    "customerName": "sahasra",
+    "items": [
+      {
+        "itemId": 1,
+        "itemName": "Burger",
+        "price": 150.0,
+        "quantity": 2
+      },
+      {
+        "itemId": 2,
+        "itemName": "Pizza",
+        "price": 200.0,
+        "quantity": 2
+      }
+    ]
+  }
+]

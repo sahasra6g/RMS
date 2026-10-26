@@ -68,6 +68,9 @@ public class CustomerController {
                 case 4:
                     makePayment();
                     break;
+                case 5:
+                    viewPreviousOrders();
+                    break;
 
                 case 0:
                     customerView.showMessage("Customer logged out.");
@@ -169,6 +172,23 @@ public class CustomerController {
             (paymentCompleted ? "Paid" : "Pending")
         );
     }
+
+private void viewPreviousOrders() {
+    customerView.showMessage("\n===== PREVIOUS ORDERS =====");
+
+    boolean found = false;
+
+    for (Order order : orderStorage.getAllOrders()) {
+        if (order.getCustomerId() == customerId) {
+            order.displayOrder();
+            found = true;
+        }
+    }
+
+    if (!found) {
+        customerView.showMessage("No previous orders found.");
+    }
+}
 
     private void makePayment() {
         if (orderedItems.isEmpty()) {

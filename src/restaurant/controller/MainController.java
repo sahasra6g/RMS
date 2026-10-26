@@ -29,7 +29,6 @@ public class MainController {
 	    this.orderStorage = orderStorage;
 	}
 
-
     public void start() {
         int choice;
 
