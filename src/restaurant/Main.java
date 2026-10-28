@@ -1,4 +1,3 @@
-
 package restaurant;
 
 import java.util.Scanner;
@@ -11,6 +10,9 @@ import restaurant.storage.CollectionMenuStorage;
 import restaurant.storage.CollectionOrderStorage;
 import restaurant.storage.JsonMenuStorage;
 import restaurant.storage.JsonOrderStorage;
+import restaurant.storage.DBMenuStorage;
+import restaurant.storage.DBOrderStorage;
+
 import restaurant.view.MainView;
 
 public class Main {
@@ -42,11 +44,9 @@ public class Main {
                 orderStorage=new JsonOrderStorage();
                 break;
             case 3:
-                System.out.println(
-                    "Database storage is not implemented yet."
-                );
-                sc.close();
-                return;
+                menuStorage = new DBMenuStorage();
+                orderStorage = new DBOrderStorage();
+                break;
 
             default:
                 System.out.println("Invalid storage choice.");
